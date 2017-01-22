@@ -201,7 +201,7 @@
 
     "return"        :
         "prefix"        : "ret"
-        "body"          : "return $1;"
+        "body"          : "return $1"
 
     "const"         :
         "prefix"        : "cn"
@@ -213,11 +213,11 @@
 
     "import"    :
         "prefix"    : "im"
-        "body"      : "import ${1:\\{$2\\}}$3 = require(\"$4\");"
+        "body"      : "import ${1:\\{$2\\}}$3 from '$4'"
 
-    "export"    :
-        "prefix"    : "ex"
-        "body"      : "export "
+    "export default" :
+        "prefix"    : "ed"
+        "body"      : "export default "
 
     "default"       :
         "prefix"        : "def"
@@ -281,7 +281,7 @@
 ".source.js"   :
     "require"       :
         "prefix"        : "rq"
-        "body"          : "require(\"$1\");"
+        "body"          : "require('$1');"
 
     "doc"           :
         "prefix"        : "/*"
@@ -341,7 +341,7 @@
 
     "import"    :
         "prefix"    : "im"
-        "body"      : "import ${1:\\{$2\\}}$3 from \"$4\";"
+        "body"      : "import ${1:\\{$2\\}}$3 from '$4';"
 
     "export default" :
         "prefix"    : "ed"
@@ -351,9 +351,17 @@
         "prefix"    : "edf"
         "body"      : "export default function $1($2) {\n\t$3\n}"
 
-    "exporet default class" :
+    "export default class" :
         "prefix"    : "edc"
         "body"      : "export default class $1${2: extends $3} {\n\t$4\n}"
+
+    "export from" :
+        "prefix"    : "efr"
+        "body"      : "export $1 from '$2';"
+
+    "export function" :
+        "prefix"    : "ef"
+        "body"      : "export function $1($2) {\n\t$3\n}"
 
     "export"    :
         "prefix"    : "ex"

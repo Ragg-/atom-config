@@ -12,14 +12,54 @@
 
 }
 
-atom-text-editor {
-
+body {
+    // background-image: url("file:///Users/ragg/Documents/%E3%83%9E%E3%82%B7%E3%82%99%E3%83%83%E3%82%AF%20%E3%83%95%E3%82%99%E3%83%AA%E3%83%BC%E3%83%95%E3%82%B1%E3%83%BC%E3%82%B9/Image/wallpaper/illust/Gochiusa/IMG_3524.jpg") !important;
+    background-image: url("file:///Users/ragg/Documents/%E3%83%9E%E3%82%B7%E3%82%99%E3%83%83%E3%82%AF%20%E3%83%95%E3%82%99%E3%83%AA%E3%83%BC%E3%83%95%E3%82%B1%E3%83%BC%E3%82%B9/Image/wallpaper/illust/Gochiusa/IMG_3553.jpg") !important;
+    background-position: center;
+    background-size: cover;
 }
 
-atom-text-editor .cursor {
-
+.package-detail {
+    transform: translateX(0);
 }
 
+// ::shadow .editor-contents--private {
+//     transform: translateX(0);
+// }
+
+atom-workspace {
+    background-color: fade(#1f1f1f, 0%);
+}
+atom-pane-resize-handle::before {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.atom-texteditor, :host {
+    background-color: fade(#1c1c1c, 100%);
+}
+atom-text-editor /deep/ .lines {
+    background-color: transparent !important;
+
+    & > div > div {
+        background-color: transparent !important;
+    }
+}
+
+atom-workspace-axis {
+    opacity: 1;
+}
+
+atom-text-editor.editor {
+    opacity: .8;
+}
+
+atom-pane-container {
+    padding-top: 0;
+}
+
+// atom-pane-container atom-pane {
+//     padding: 0;
+// }
 
 // For refactor
 @import "octicon-utf-codes.less";

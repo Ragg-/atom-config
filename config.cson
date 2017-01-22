@@ -1,6 +1,15 @@
 "*":
   "atom-beautify":
-    _analyticsUserId: "3a2845f5-5ea0-4685-9e27-05da04be111e"
+    general:
+      _analyticsUserId: "3a2845f5-5ea0-4685-9e27-05da04be111e"
+      analytics: false
+      beautifyEntireFileOnSave: false
+    js:
+      brace_style: "none"
+  "atom-clock":
+    dateFormat: "H:mm:ss"
+    refreshInterval: 1
+    showClockIcon: true
   "atom-ctags": {}
   "atom-pronama-chan":
     imageOpacity: 0.1
@@ -17,22 +26,33 @@
     compiler: {}
     format: {}
   "autoclose-html": {}
-  "autocomplete-plus": {}
+  "autocomplete-clang":
+    ignoreClangErrors: false
+    includeDocumentation: false
+  "autocomplete-plus":
+    enableExtendedUnicodeSupport: true
   "coffee-paste":
     nodePath: "node"
   "coffee-refactor": {}
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "atom-ternjs"
       "atom-cli-diff"
       "slash-closer"
       "atom-ctags"
-      "language-hack"
-      "typescript-atomizer"
       "vim-mode"
-      "Tern"
-      "atom-pronama-chan"
-      "atom-typescript-tools"
       "atom-twitter"
       "atom-twitter"
       "atom-twitter"
@@ -41,20 +61,32 @@
       "atom-twitter"
       "atom-twitter"
       "autocomplete-php"
-      "php-class-tree"
-      "php-introspector"
-      "tree-view-background"
       "nuclide-debugger-atom"
       "nuclide-type-hint"
+      "clang-format"
+      "jshint"
+      "atom-autocomplete-php"
+      "nuclide"
+      "Atom-Hack"
+      "autocomplete-hack"
+      "coffee-paste"
+      "gfm-pdf"
+      "language-cpp14"
+      "wrap-guide"
+      "atom-pronama-chan"
+      "Tern"
+      "language-javascript-jsx"
     ]
     excludeVcsIgnoredPaths: false
+    telemetryConsent: "no"
     themes: [
       "one-light-ui"
-      "atom-light-syntax"
+      "monokai-light"
     ]
+    useCustomTitleBar: true
   editor:
     autoIndentOnPaste: false
-    fontFamily: "SourceCodePro-Light"
+    fontFamily: "SourceCodePro-Medium"
     fontSize: 12
     invisibles: {}
     showIndentGuide: true
@@ -83,9 +115,20 @@
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
   "gfm-pdf": {}
+  "highlight-line":
+    enableBackgroundColor: false
+  "ide-flow":
+    flowPath: "/Users/ragg/.nvm/versions/node/v6.8.1/bin/flow"
+  "javascript-refactor":
+    cpus: 4
   jshint:
     onlyConfig: true
-  linter: {}
+  "language-babel":
+    babelMapsAddUrl: false
+    suppressTranspileOnSaveMessages: false
+  linter:
+    errorPanelHeight: 24
+  "linter-clang": {}
   "linter-php": {}
   localization:
     CurrentLanguage: "Default"
@@ -101,38 +144,72 @@
   nuclide:
     "nuclide-arcanist": {}
     "nuclide-buck-files": {}
+    "nuclide-clang":
+      defaultDiagnostics: true
     "nuclide-debugger-hhvm": {}
+    "nuclide-diagnostics-store":
+      consumeLegacyLinters: false
+      legacyLintOnTheFly: false
     "nuclide-file-tree":
       hideIgnoredNames: false
     "nuclide-flow":
       diagnosticsOnFly: true
       enableStructuredTypeHints: true
+      excludeOtherAutocomplete: true
     "nuclide-format-js": {}
-    "nuclide-hack": {}
+    "nuclide-hack":
+      hhClientPath: "hh_client"
     "nuclide-health": {}
     "nuclide-home":
       showHome: false
     "nuclide-ocaml": {}
     "nuclide-output": {}
+    "nuclide-remote-atom":
+      shouldNotifyWhenCommandLineIsWaitingOnFile: false
+    "nuclide-remote-projects":
+      confirmServerActionOnLastProject: false
     use:
       "nuclide-adb-logcat": false
       "nuclide-arcanist": false
       "nuclide-blame": false
       "nuclide-blame-provider-hg": false
       "nuclide-blame-ui": false
+      "nuclide-bookshelf": false
+      "nuclide-buck": false
       "nuclide-buck-files": false
       "nuclide-buck-toolbar": false
       "nuclide-code-format": false
+      "nuclide-context-view": false
+      "nuclide-diagnostics-ui": false
+      "nuclide-distraction-free-mode": false
       "nuclide-file-tree": false
+      "nuclide-home": false
+      "nuclide-http-request-sender": false
+      "nuclide-ios-simulator-logs": false
+      "nuclide-move-item-to-available-pane": false
       "nuclide-objc": false
       "nuclide-ocaml": false
+      "nuclide-python": false
+      "nuclide-react-native": false
+      "nuclide-react-native-inspector": false
+      "nuclide-recent-files-provider": false
+      "nuclide-recent-files-service": false
+      "nuclide-remote-atom": false
       "nuclide-remote-ctags": false
       "nuclide-remote-projects": false
+      "nuclide-side-bar": false
+      "nuclide-source-control-side-bar": false
+      "nuclide-swift": false
+      "nuclide-task-runner": false
       "nuclide-test-runner": false
+      "nuclide-type-coverage": false
+      "nuclide-vcs-log": false
+      "nuclide-workspace-view-locations": false
   "one-light-ui":
     layoutMode: "Spacious"
   "pair-programming":
     handle: "vegeta-4009"
+  refactor: {}
   "save-session":
     dataSaveFolder: "/Users/me/.atom/packages/save-session/projects"
     project: "/Users/me/Documents/workspace/halcinema-admin"
@@ -150,3 +227,25 @@
   "twitter-reader": {}
   welcome:
     showOnStartup: false
+".ansi.text":
+  editor:
+    tabLength: 4
+".hack.html.text":
+  editor:
+    tabLength: 4
+".hackfragment.source":
+  editor:
+    scrollPastEnd: true
+    tabLength: 4
+".hg-commit.text":
+  editor:
+    autoIndent: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+".js.jsx.react.source":
+  editor:
+    autoIndent: false
+".source.ts":
+  editor:
+    autoIndent: false
