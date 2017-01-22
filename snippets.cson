@@ -241,35 +241,35 @@
 
     "console log"       :
         "prefix"            : "csl"
-        "body"              : "console.log($1);"
+        "body"              : "console.log($1)"
 
     "console error"       :
         "prefix"            : "cse"
-        "body"              : "console.error($1);"
+        "body"              : "console.error($1)"
 
     "console info"      :
         "prefix"            : "csi"
-        "body"              : "console.info($1);"
+        "body"              : "console.info($1)"
 
     "console trace"     :
         "prefix"            : "cst"
-        "body"              : "console.trace(${1:($2)});"
+        "body"              : "console.trace(${1:($2)})"
 
     "console log arguments" :
         "prefix"            : "csla"
-        "body"              : "console.log(${1:, }arguments);"
+        "body"              : "console.log(${1:, }arguments)"
 
     "console dir"       :
         "prefix"            : "csd"
-        "body"              : "console.dir($1);"
+        "body"              : "console.dir($1)"
 
     "console group"       :
         "prefix"            : "csg"
-        "body"              : "console.group($1);"
+        "body"              : "console.group($1)"
 
     "console groupEnd"       :
         "prefix"            : "csge"
-        "body"              : "console.groupEnd();"
+        "body"              : "console.groupEnd()"
 
     "interface"         :
         "prefix"            : "intr"
